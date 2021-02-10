@@ -50,6 +50,7 @@ mv Rattus_norvegicus.Rnor_6.0.cdna.all.fa references/rat/
 #https://support.10xgenomics.com/single-cell-gene-expression/software/downloads/latest
 wget https://cf.10xgenomics.com/supp/cell-exp/refdata-gex-mm10-2020-A.tar.gz
 #mv the transcriptome fasta (after generating using mktranscriptome.sh) file to a directory called: "references/mouse/"
+mkdir references/mouse/
 tar -xvzf refdata-gex-mm10-2020-A.tar.gz
 cd refdata-gex-mm10-2020-A
 bash ../mktranscriptome.sh
@@ -57,9 +58,12 @@ bash ../mkt2g.sh
 cd ..
 mv refdata-gex-mm10-2020-A/transcriptome.fa references/mouse/
 mv refdata-gex-mm10-2020-A/t2g.txt references/mouse/
+rm refdata-gex-mm10-2020-A.tar.gz
+rm refdata-gex-mm10-2020-A -r
 
 wget https://cf.10xgenomics.com/supp/cell-exp/refdata-gex-GRCh38-2020-A.tar.gz
 #mv the transcriptome fasta (after generating using mktranscriptome.sh) file to a directory called: "references/human/"
+mkdir references/human/
 tar -xvzf refdata-gex-GRCh38-2020-A.tar.gz
 cd refdata-gex-GRCh38-2020-A
 bash ../mktranscriptome.sh
@@ -67,9 +71,12 @@ bash ../mkt2g.sh
 cd ..
 mv refdata-gex-GRCh38-2020-A/transcriptome.fa references/human/
 mv refdata-gex-GRCh38-2020-A/t2g.txt references/human/
+rm refdata-gex-GRCh38-2020-A.tar.gz
+rm refdata-gex-GRCh38-2020-A -r
 
 wget  https://cf.10xgenomics.com/supp/cell-exp/refdata-gex-GRCh38-and-mm10-2020-A.tar.gz
 #mv the transcriptome fasta (after generating using mktranscriptome.sh) file to a directory called: "references/human_mouse/"
+mkdir references/human_mouse/
 tar -xvzf refdata-gex-GRCh38-and-mm10-2020-A.tar.gz
 cd refdata-gex-GRCh38-and-mm10-2020-A
 bash ../mktranscriptome.sh
@@ -77,3 +84,5 @@ bash ../mkt2g.sh
 cd ..
 mv refdata-gex-GRCh38-and-mm10-2020-A/transcriptome.fa references/human_mouse/
 mv refdata-gex-GRCh38-and-mm10-2020-A/t2g.txt references/human_mouse/
+rm refdata-gex-GRCh38-and-mm10-2020-A.tar.gz
+rm refdata-gex-GRCh38-and-mm10-2020-A -r

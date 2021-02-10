@@ -1,0 +1,12 @@
+{
+	"reads_dir":"/PATH/TO/DIRECTORY/OF/ALL/SAMPLES/",
+        "ref_dir":"/PATH/TO/DIRECTORY/OF/ALL/REFERENCES/AND/INDICES",
+        "out_dir":"/PATH/TO/DIRECTORY/OF/RESULTS/",
+        "config_dir":"/PATH/TO/DIRECTORY/CONTAINING/CONFIGS/OF/SAMPLES/TO/RUN/",
+        "script_dir":"/PATH/TO/DIRECTORY/OF/SCRIPTS/",
+        "BP_dir":"/PATH/TO/MAIN/DIRECTORY/OF/THE/REPOSITORY/",
+        "salmon":"/PATH/TO/SALMON/BINARY",
+	"alevinfry":"/PATH/TO/ALEVIN-FRY/BINARY",
+	"kallisto":"/PATH/TO/KALLISTO/BINARY",
+	"bustools":"/PATH/TO/BUSTOOLS/BINARY"
+}

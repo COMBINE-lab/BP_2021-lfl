@@ -4,6 +4,7 @@
 wget https://raw.githubusercontent.com/10XGenomics/cellranger/master/lib/python/cellranger/barcodes/translation/3M-february-2018.txt.gz
 gunzip 3M-february-2018.txt.gz
 cut -f1 3M-february-2018.txt > 10xv3barcodes.txt
+rm 3M-february-2018.txt
 
 wget https://raw.githubusercontent.com/10XGenomics/cellranger/master/lib/python/cellranger/barcodes/737K-august-2016.txt
 mv 737K-august-2016.txt 10xv2barcodes.txt
@@ -16,3 +17,5 @@ cut -f1 -d$"-" filtered_feature_bc_matrix/barcodes.tsv > human-pbmc10k_v3.txt
 mkdir ../../data/
 mkdir ../../data/cellranger_barcodes/
 mv human-pbmc10k_v3.txt ../../data/cellranger_barcodes/
+rm pbmc_10k_v3_filtered_feature_bc_matrix.tar.gz
+rm filtered_feature_bc_matrix/ -r

@@ -1,0 +1,5 @@
+{
+        "sample":"pbmc10k_v3",
+	"species":"human",
+	"technology":"v3"
+}

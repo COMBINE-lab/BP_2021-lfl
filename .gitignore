@@ -11,7 +11,6 @@
 *.tsv
 *.fastq
 *.bus
-*.json
 data/
 .ipynb_checkpoints/
 *.log
