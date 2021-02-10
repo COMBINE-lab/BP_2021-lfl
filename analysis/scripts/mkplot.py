@@ -49,7 +49,7 @@ def _plt_color(lst):
     cols=[]
     for l in lst:
         if l>0.25 or l<-0.25:
-            cols.append("red")
+            cols.append("#662f0a")
         elif l<=0.25 and l>=-0.25:
             cols.append('black')
     return cols

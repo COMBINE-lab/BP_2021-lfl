@@ -144,7 +144,7 @@ def main(ds, out_dir):
     
     # load whitelists
     kb_wl_file = f"../../data/kallisto_out/{ds}/whitelist.txt"    
-    al_wl_file = f"../../data/alevin_out/{ds}/whitelist/permit_freq.tsv"
+    al_wl_file = f"../../data/alevin_out/{ds}/quant/alevin/quants_mat_rows.txt"
     
     k = nd(pd.read_csv(kb_wl_file, header=None).values)
     a = nd(pd.read_csv(al_wl_file, header=None, sep="\t", names = ['bcs', 'cnt'])['bcs'].values)
@@ -168,8 +168,9 @@ def main(ds, out_dir):
     print(f"[{t}] load alevin decoys")
 
     ref = REF[ds]
-    decoys = pd.read_csv(f"../../reference/{ref}/salmon/decoys.txt", header = None, names=['decoys'])
-    alevin_raw = alevin_raw_decoys[:, ~alevin_raw_decoys.var.index.isin(decoys['decoys'])].copy()
+    #decoys = pd.read_csv(f"../../reference/{ref}/salmon/decoys.txt", header = None, names=['decoys'])
+    #alevin_raw = alevin_raw_decoys[:, ~alevin_raw_decoys.var.index.isin(decoys['decoys'])].copy()
+    alevin_raw = alevin_raw_decoys.copy()
     
     # load kb
     t = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')

@@ -121,7 +121,7 @@ gsea_bar_full <- function(species, name_regex, mapping,
     left_join(go_df, by = c("gene" = "ensembl")) %>% 
     inner_join(method_gsea, by = "GO.ID") %>% 
     dplyr::filter(p_log > uniform_log) %>% 
-    mutate(change = cut(avg_logFC, -20:20),
+    mutate(change = cut(avg_log2FC, -20:20),
            dataset = name_use)
   # Save the data frame for bar plot
   print('Writing')
