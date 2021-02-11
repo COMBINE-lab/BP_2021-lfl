@@ -1,28 +1,29 @@
 # Make the gsea bar plot for all datasets
 source("./gsea_bar_full.R")
 
+# You can comment the lines corresponding to the samples for which you wish to perform the analysis
+# for now the script only analyse the human-pbmc10_v3 sample (the results in the main manuscript)
 dataset_meta <- tribble(~name_regex,	~species, ~mapping,
-                        "mouse-EMTAB7320_v2",	"Mus musculus", "org.Mm.eg.db",
-                        "mouse-heart1k_v2",	"Mus musculus", "org.Mm.eg.db",
-                        "mouse-heart1k_v3",	"Mus musculus", "org.Mm.eg.db",
-                        "human_mouse-hgmm10k_v3",	c("Homo sapiens", "Mus musculus"), c("org.Hs.eg.db", "org.Mm.eg.db"),
-                        "human_mouse-hgmm1k_v2",	c("Homo sapiens", "Mus musculus"), c("org.Hs.eg.db", "org.Mm.eg.db"),
-                        "human_mouse-hgmm1k_v3",	c("Homo sapiens", "Mus musculus"), c("org.Hs.eg.db", "org.Mm.eg.db"),
-                        "mouse-neuron10k_v3",	"Mus musculus", "org.Mm.eg.db",
-                        "human-pbmc10k_v3",	"Homo sapiens", "org.Hs.eg.db",
-                        "human-pbmc1k_v3",	"Homo sapiens", "org.Hs.eg.db",
-                        "zebrafish-SRR6956073_v2", "Danio rerio", "org.Dr.eg.db",
-                        "mouse-SRR6998058_v2", "Mus musculus", "org.Mm.eg.db",
-                        "rat-SRR7299563_v2", "Rattus norvegicus", "org.Rn.eg.db",
-                        #"SRR7692543_v2", "Macaca fascicularis",
-                        "mouse-SRR8206317_v2", "Mus musculus", "org.Mm.eg.db",
-                        "arabidopsis-SRR8257100_v2", "Arabidopsis thaliana", "org.At.tair.db",
-                        "human-SRR8327928_v2", "Homo sapiens", "org.Hs.eg.db",
-                        "fly-SRR8513910_v2", "Drosophila melanogaster", "org.Dm.eg.db",
-                        "human-SRR8524760_v2", "Homo sapiens", "org.Hs.eg.db",
-                        "mouse-SRR8599150_v2", "Mus musculus", "org.Mm.eg.db",
-                        "worm-SRR8611943_v2", "Caenorhabditis elegans", "org.Ce.eg.db",
-                        "mouse-SRR8639063_v2", "Mus musculus", "org.Mm.eg.db")
+#                        "mouse-EMTAB7320_v2",	"Mus musculus", "org.Mm.eg.db",
+#                        "mouse-heart1k_v2",	"Mus musculus", "org.Mm.eg.db",
+#                        "mouse-heart1k_v3",	"Mus musculus", "org.Mm.eg.db",
+#                        "human_mouse-hgmm10k_v3",	c("Homo sapiens", "Mus musculus"), c("org.Hs.eg.db", "org.Mm.eg.db"),
+#                        "human_mouse-hgmm1k_v2",	c("Homo sapiens", "Mus musculus"), c("org.Hs.eg.db", "org.Mm.eg.db"),
+#                        "human_mouse-hgmm1k_v3",	c("Homo sapiens", "Mus musculus"), c("org.Hs.eg.db", "org.Mm.eg.db"),
+#                        "mouse-neuron10k_v3",	"Mus musculus", "org.Mm.eg.db",
+                        "human-pbmc10k_v3",	"Homo sapiens", "org.Hs.eg.db")
+#                        "human-pbmc1k_v3",	"Homo sapiens", "org.Hs.eg.db",
+#                        "zebrafish-SRR6956073_v2", "Danio rerio", "org.Dr.eg.db",
+#                        "mouse-SRR6998058_v2", "Mus musculus", "org.Mm.eg.db",
+#                        "rat-SRR7299563_v2", "Rattus norvegicus", "org.Rn.eg.db",
+#                        "mouse-SRR8206317_v2", "Mus musculus", "org.Mm.eg.db",
+#                        "arabidopsis-SRR8257100_v2", "Arabidopsis thaliana", "org.At.tair.db",
+#                        "human-SRR8327928_v2", "Homo sapiens", "org.Hs.eg.db",
+#                        "fly-SRR8513910_v2", "Drosophila melanogaster", "org.Dm.eg.db",
+#                        "human-SRR8524760_v2", "Homo sapiens", "org.Hs.eg.db",
+#                        "mouse-SRR8599150_v2", "Mus musculus", "org.Mm.eg.db",
+#                        "worm-SRR8611943_v2", "Caenorhabditis elegans", "org.Ce.eg.db",
+#                        "mouse-SRR8639063_v2", "Mus musculus", "org.Mm.eg.db")
 dataset_meta <- dataset_meta %>% 
   mutate(name_use = str_remove(name_regex, "_\\?"))
 

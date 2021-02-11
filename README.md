@@ -14,6 +14,7 @@
 
 #### Download the samples
 - navigate to `./analysis/scripts/`
+- Make sure you have the sratools 2.9 installed on your system (https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/2.9.6/sratoolkit.2.9.6-ubuntu64.tar.gz)
 - Run `$bash gather_data.sh`
   Downloads the fastq files and moves the ones for each sample to a directory called `samples/{species}-{sample-name}`
 
