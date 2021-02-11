@@ -190,8 +190,8 @@ rm ./SRR8257100.1
 #https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR8513910
 wget  https://sra-downloadb.be-md.ncbi.nlm.nih.gov/sos3/sra-pub-run-19/SRR8513910/SRR8513910.1
 fastq-dump --split-files ./SRR8513910.1
-rename 1.fastq R1.fastq *
-rename 2.fastq R2.fastq *
+rename 2.fastq R1.fastq *
+rename 3.fastq R2.fastq *
 #mv the fastq.gz files to a directory called: "samples/fly-SRR8513910_v2"
 mkdir samples/fly-SRR8513910_v2
 gzip *.fastq
