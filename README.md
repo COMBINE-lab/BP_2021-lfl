@@ -13,13 +13,13 @@
 - Run `$bash gather_cr_barcodes.sh`
 
 #### Download the samples
+- Make sure you have the **sratools 2.9** is installed on your system (https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/2.9.6/sratoolkit.2.9.6-ubuntu64.tar.gz)
 - navigate to `./analysis/scripts/`
-- Make sure you have the sratools 2.9 installed on your system (https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/2.9.6/sratoolkit.2.9.6-ubuntu64.tar.gz)
 - Run `$bash gather_data.sh`
   Downloads the fastq files and moves the ones for each sample to a directory called `samples/{species}-{sample-name}`
 
 #### Download the references
-- Make sure **'bamtofastq'** (https://github.com/10XGenomics/bamtofastq) is downloaded and added to the PATH
+- Make sure **'bamtofastq'** is downloaded and added to the PATH ((https://github.com/10XGenomics/bamtofastq)
 - navigate to `./analysis/scripts/`
 - Run `$bash gather_refs.sh`
   This script, for human, mouse and human_mouse, uses the `.mktranscriptome.sh` to build the transcriptome from the genome and the annotation files, and use the `mkt2g.sh` to generate the gene-to-transcript files. For other references, it uses `mkt2g_rest.sh` to generate the gene-to-transcript files. Then, the fasta file and the corresponding t2g file for each species are moved to a directory called `references/{species}/`
