@@ -56,12 +56,14 @@ walk2(dataset_meta$name_use, dataset_meta$species,
         go_def <- map_dfr(y, function(s) {
           read_csv(paste0("../../reference/GO/go_def", str_replace(s, " ", "_"), ".csv"))
         })
-        bar_df <- bar_df %>% 
-          left_join(go_def) %>% 
-          mutate(label = case_when(
-            (!is.na(label) & !is.na(GO_full_name) & label != GO_full_name) ~ GO_full_name,
-            TRUE ~ label
-          )) %>% 
-          dplyr::select(p_val:description, change, gene_set = label)
-        write_csv(bar_df, paste0("../../data/gsea_bar_name_fix/", x, ".csv"))
+        if (any(!is.na(qq_df$label))) {
+          bar_df <- bar_df %>%
+            left_join(go_def) %>%
+            mutate(label = case_when(
+              (!is.na(label) & !is.na(GO_full_name) & label != GO_full_name) ~ GO_full_name,
+              TRUE ~ label
+            )) %>%
+            dplyr::select(p_val:description, change, gene_set = label)
+          write_csv(bar_df, paste0("../../data/gsea_bar_name_fix/", x, ".csv"))
+        }
       })
